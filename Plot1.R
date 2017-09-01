@@ -13,4 +13,6 @@ hpc_filt$Date<-as.Date(hpc_filt$Date,format="%d/%m/%Y")
 head(hpc_filt)
 
 #plot 1 
-hist(hpc_filt,)
+ hist(hpc_filt$Global_active_power,main="Global Active Power",xlab="Global Active Power (kilowatts",ylab="Frequency",col="Red")
+ png("plot1.png", width=480, height=480)
+ dev.off()
