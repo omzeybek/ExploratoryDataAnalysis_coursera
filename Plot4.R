@@ -21,6 +21,9 @@ par(mfrow=c(2,2), mar=c(4,4,2,1), oma=c(0,0,2,0))
 
 
 #Skecth plot 3, I will add two extra lines to plot2
+
+png("plot4.png", width=480, height=480)
+
 with(hpc_filt, {
         plot(Global_active_power~Datetime, type="l", 
              ylab="Global Active Power (kilowatts)", xlab="")
@@ -36,5 +39,5 @@ with(hpc_filt, {
              ylab="Global Rective Power (kilowatts)",xlab="")
 })
 #Now export
-png("plot4.png", width=480, height=480)
+
 dev.off()
