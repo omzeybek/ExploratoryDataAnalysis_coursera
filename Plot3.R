@@ -16,6 +16,10 @@ hpc_filt$Datetime<-as.POSIXct(datetime)
 head(hpc_filt)
 
 #Skecth plot 3, I will add two extra lines to plot2
+
+png("plot3.png", width=480, height=480)
+
+
 with(hpc_filt,{ plot(Sub_metering_1~Datetime, type="l",ylab="Global Active Power (kilowatts)",xlab="")
  lines(Sub_metering_2~Datetime,col="Red")
  lines(Sub_metering_3~Datetime,col="Blue")
@@ -24,6 +28,5 @@ with(hpc_filt,{ plot(Sub_metering_1~Datetime, type="l",ylab="Global Active Power
 legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, 
        legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
-#Now export
-png("plot3.png", width=480, height=480)
+
 dev.off()
