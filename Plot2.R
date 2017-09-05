@@ -1,6 +1,6 @@
 #this code reads data into R, using provided attributes of data set 
 hpc <- read.csv("household_power_consumption.txt", header=T, sep=';', na.strings="?", 
-                      nrows=2075259, check.names=F, stringsAsFactors=T, comment.char="", quote='\"')
+                nrows=2075259, check.names=F, stringsAsFactors=T, comment.char="", quote='\"')
 
 #Now i will subset two distinct dates which all the work will be done 
 
@@ -16,7 +16,9 @@ hpc_filt$Datetime<-as.POSIXct(datetime)
 head(hpc_filt)
 
 #Skecth plot 2
-with(hpc_filt, plot(Global_active_power ~ Datetime, type="l",ylab="Global Active Power (kilowatts)",xlab=""))
-#Now export
 png("plot2.png", width=480, height=480)
+
+with(hpc_filt, plot(Global_active_power ~ Datetime, type="l",ylab="Global Active Power (kilowatts)",xlab=""))
+
+
 dev.off()
